@@ -1,6 +1,6 @@
-C=gcc-6
+C=gcc
 RM=rm -f
-CFLAGS=-g -O3 -march=native -funroll-all-loops -fomit-frame-pointer
+CFLAGS=-O3 -march=native -funroll-all-loops -fomit-frame-pointer
 SRCS=main.c haraka.c
 OBJS=$(subst .c,.o,$(SRCS))
 OUTFILE="haraka"
@@ -8,13 +8,13 @@ OUTFILE="haraka"
 all: haraka
 
 haraka: $(OBJS)
-	$(C) -o $(OUTFILE) $(OBJS) $(LDLIBS)
+	$(CC) -o $(OUTFILE) $(OBJS) $(LDLIBS)
 
 depend: .depend
 
 .depend: $(SRCS)
 	rm -f ./.depend
-	$(C) $(CFLAGS) -MM $^>>./.depend;
+	$(CC) $(CFLAGS) -MM $^>>./.depend;
 
 clean:
 	$(RM) $(OBJS)
