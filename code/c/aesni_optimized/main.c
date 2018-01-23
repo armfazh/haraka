@@ -19,8 +19,8 @@ double timeit(hash_function func, int inlen, int outlen) {
   int i, j;
 
   srand(0);
-  in = malloc(inlen);
-  out = malloc(outlen);
+  in = _mm_malloc(inlen,ALIGN_BYTES);
+  out = _mm_malloc(outlen,ALIGN_BYTES);
 
   load_constants();
 
@@ -44,8 +44,8 @@ double timeit(hash_function func, int inlen, int outlen) {
   //Get Median
   qsort(timings, NUM_TIMINGS, sizeof(double), compareDouble);
 
-  free(out);
-  free(in);
+  _mm_free(out);
+  _mm_free(in);
   return timings[NUM_TIMINGS / 2];
 }
 
