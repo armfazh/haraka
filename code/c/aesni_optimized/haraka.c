@@ -357,21 +357,11 @@ void haraka512_4x(unsigned char *out, const unsigned char *in) {
   u128 s32 = LOAD(in + 224);
   u128 s33 = LOAD(in + 240);
 
-  AES4_4x_my(0);
-  
-  
-  AES4_4x_my(8);
-  
-  
-  AES4_4x_my(16);
-  
-  
-  AES4_4x_my(24);
-  
-  
-  AES4_4x_my(32);
-  
-  
+  AES4_4x_my( 0);  MIX4_4x_my();
+  AES4_4x_my( 8);  MIX4_4x_my();
+  AES4_4x_my(16);  MIX4_4x_my();
+  AES4_4x_my(24);  MIX4_4x_my();
+  AES4_4x_my(32);  MIX4_4x_my();
   
   s00 = _mm_xor_si128(s00, LOAD(in));
   s01 = _mm_xor_si128(s01, LOAD(in + 16));
