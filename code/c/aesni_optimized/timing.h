@@ -1,7 +1,7 @@
 #ifndef TIMING_H
 #define TIMING_H
 
-#define NUM_TIMINGS 10000
+#define NUM_TIMINGS 50000
 #define ITERATIONS 1000
 
 int compareDouble(const void *x, const void *y)
