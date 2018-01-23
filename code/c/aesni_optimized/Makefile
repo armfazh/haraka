@@ -1,5 +1,5 @@
 RM=rm -f
-CFLAGS=-O3 -march=native -mtune=native -funroll-all-loops -fomit-frame-pointer
+CFLAGS=-O3 -march=native -mtune=native -fomit-frame-pointer
 SRCS=main.c haraka.c
 OBJS=$(subst .c,.o,$(SRCS))
 OUTFILE="haraka"
