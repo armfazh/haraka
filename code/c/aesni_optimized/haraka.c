@@ -389,9 +389,9 @@ void haraka512_4x(unsigned char *out, const unsigned char *in) {
 
 void haraka512_8x(unsigned char *out, const unsigned char *in) {
   // This is faster on Skylake, the code below is faster on Haswell.
-//  haraka512_4x(out, in);
-//  haraka512_4x(out + 128, in + 256);
-//return;
+  haraka512_4x(out, in);
+  haraka512_4x(out + 128, in + 256);
+return;
 //   u128 s[8][4];
 
     u128 tmp;

@@ -103,12 +103,12 @@ Optimized Implementations for Haraka256 and Haraka512
 
 #define AES4_4x_my(rci) \
   tmp = _mm_load_si128((u128*)rc+rci+0); s00 = AESENC(s00, tmp); s10 = AESENC(s10, tmp); s20 = AESENC(s20, tmp); s30 = AESENC(s30, tmp); \
-  tmp = _mm_load_si128((u128*)rc+rci+4); s00 = AESENC(s00, tmp); s10 = AESENC(s10, tmp); s20 = AESENC(s20, tmp); s30 = AESENC(s30, tmp); \
   tmp = _mm_load_si128((u128*)rc+rci+1); s01 = AESENC(s01, tmp); s11 = AESENC(s11, tmp); s21 = AESENC(s21, tmp); s31 = AESENC(s31, tmp); \
+  tmp = _mm_load_si128((u128*)rc+rci+4); s00 = AESENC(s00, tmp); s10 = AESENC(s10, tmp); s20 = AESENC(s20, tmp); s30 = AESENC(s30, tmp); \
   tmp = _mm_load_si128((u128*)rc+rci+5); s01 = AESENC(s01, tmp); s11 = AESENC(s11, tmp); s21 = AESENC(s21, tmp); s31 = AESENC(s31, tmp); \
   tmp = _mm_load_si128((u128*)rc+rci+2); s02 = AESENC(s02, tmp); s12 = AESENC(s12, tmp); s22 = AESENC(s22, tmp); s32 = AESENC(s32, tmp); \
-  tmp = _mm_load_si128((u128*)rc+rci+6); s02 = AESENC(s02, tmp); s12 = AESENC(s12, tmp); s22 = AESENC(s22, tmp); s32 = AESENC(s32, tmp); \
   tmp = _mm_load_si128((u128*)rc+rci+3); s03 = AESENC(s03, tmp); s13 = AESENC(s13, tmp); s23 = AESENC(s23, tmp); s33 = AESENC(s33, tmp); \
+  tmp = _mm_load_si128((u128*)rc+rci+6); s02 = AESENC(s02, tmp); s12 = AESENC(s12, tmp); s22 = AESENC(s22, tmp); s32 = AESENC(s32, tmp); \
   tmp = _mm_load_si128((u128*)rc+rci+7); s03 = AESENC(s03, tmp); s13 = AESENC(s13, tmp); s23 = AESENC(s23, tmp); s33 = AESENC(s33, tmp);
 
 #define AES4_8x_my(rci) \
